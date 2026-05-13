@@ -1,128 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BuildUp | SW·AI 보완학습</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Build Up</title>
+
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+body{
+    margin:0;
+    font-family:Pretendard, sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+
+.top-header{
+    background:#ffffff;
+    padding:18px 20px;
+    text-align:center;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    height:42px;
+    margin-bottom:10px;
+}
+
+.menu{
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    font-size:15px;
+    font-weight:700;
+    color:#475569;
+}
+
+.menu span{
+    cursor:pointer;
+}
+
+.curriculum-section{
+    padding:24px 18px 50px;
+}
+
+.curriculum-section h2{
+    font-size:30px;
+    font-weight:800;
+    color:#1f3b64;
+    margin-bottom:10px;
+}
+
+.section-desc{
+    color:#5b6475;
+    line-height:1.7;
+    margin-bottom:28px;
+}
+
+.curriculum-card{
+    background:#fff;
+    border-radius:24px;
+    padding:24px;
+    margin-bottom:24px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.basic{
+    border-top:8px solid #2c6ed5;
+}
+
+.advanced{
+    border-top:8px solid #19a974;
+}
+
+.expert{
+    border-top:8px solid #6c4ed9;
+}
+
+.level-label{
+    display:inline-block;
+    background:#eef2f7;
+    color:#5d6677;
+    font-size:13px;
+    font-weight:700;
+    padding:8px 14px;
+    border-radius:30px;
+    margin-bottom:18px;
+}
+
+.curriculum-card h3{
+    font-size:32px;
+    color:#1d3557;
+    margin-bottom:18px;
+    font-weight:800;
+}
+
+.curriculum-text{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+.curriculum-card ul{
+    padding-left:20px;
+    margin-bottom:28px;
+}
+
+.curriculum-card li{
+    margin-bottom:12px;
+    color:#333;
+    line-height:1.6;
+}
+
+.move-btn{
+    width:100%;
+    border:none;
+    border-radius:14px;
+    padding:16px;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.2s;
+    color:white;
+}
+
+.basic-btn{
+    background:#2c6ed5;
+}
+
+.basic-btn:hover{
+    background:#1f5dc0;
+}
+
+.advanced-btn{
+    background:#19a974;
+}
+
+.advanced-btn:hover{
+    background:#12845a;
+}
+
+.expert-btn{
+    background:#6c4ed9;
+}
+
+.expert-btn:hover{
+    background:#5537bf;
+}
+
+.move-btn:hover{
+    transform:translateY(-2px);
+}
+</style>
 </head>
+
 <body>
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="index.html" aria-label="BuildUp 홈">
-        <img src="logo.png" alt="BuildUp 로고">
-      </a>
-      <nav class="nav-links" aria-label="주요 메뉴">
-        <a href="index.html">홈</a>
-        <a href="basic.html">Basic</a>
-        <a href="advanced.html">Advanced</a>
-        <a href="expert.html">Expert</a>
-      </nav>
+
+<!-- 상단 -->
+<header class="top-header">
+    <img src="logo.png" class="logo" alt="BuildUp Logo" />
+
+    <div class="menu">
+        <span>홈</span>
+        <span>Basic</span>
+        <span>Advanced</span>
+        <span>Expert</span>
     </div>
-  </header>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <span class="badge">학교 보완형 SW·AI 프로젝트 학습</span>
-          <h1>학교 수업만으로 부족한 <span>SW·AI 실전 경험</span>을 채웁니다.</h1>
-          <p class="lead">BuildUp은 심화선택 과목 보완, 수준별 프로그래밍 학습, 학생주도형 프로젝트, 포트폴리오 축적을 연결하는 온라인 학습 프로그램입니다.</p>
-          <div class="actions">
-            <a class="btn primary" href="#curriculum">과정 보기</a>
-            <a class="btn" href="#persona">필요한 학생 확인</a>
-          </div>
-        </div>
-        <aside class="hero-card" aria-label="BuildUp 핵심 구조">
-          <img class="hero-logo" src="logo.png" alt="BuildUp">
-          <div class="metric"><b>Basic</b>코드 읽기와 반복 실습으로 기초 이해력 형성</div>
-          <div class="metric"><b>Advanced</b>문제 해결·데이터 응용·미니 프로젝트 수행</div>
-          <div class="metric"><b>Expert</b>데이터 프로젝트·포트폴리오·진로 확장</div>
-        </aside>
-      </div>
-    </section>
+<!-- 커리큘럼 -->
+<section class="curriculum-section">
 
-    <section id="persona" class="section">
-      <div class="wrap">
-        <h2>누구에게 필요한가</h2>
-        <p class="section-desc">지역과 학교 여건에 따라 SW·AI 학습 기회는 다르게 나타납니다. BuildUp은 다음 두 유형의 학생에게 특히 필요합니다.</p>
-        <div class="persona">
-          <div class="card">
-            <span class="tag">실전 경험 보완형</span>
-            <h3>많은 기회 속, 실제 경험은 부족한 학생</h3>
-            <ul>
-              <li>학교 내 SW·AI 과목은 있으나 신청 경쟁이 치열함</li>
-              <li>학생 수 대비 실습 장비와 프로젝트 기회가 부족함</li>
-              <li>학원·온라인 강의 의존도는 높지만 체계적 결과물이 부족함</li>
-            </ul>
-            <div class="quote">“배울 기회는 많다는데, 막상 해보려면 자리가 없어요.”</div>
-          </div>
-          <div class="card">
-            <span class="tag">학습 기회 보완형</span>
-            <h3>배우고 싶어도 배움의 기회 자체가 적은 학생</h3>
-            <ul>
-              <li>학교에 SW·AI 관련 과목이 충분히 개설되지 않음</li>
-              <li>전담 교사, 실습 환경, 피드백 기회가 부족함</li>
-              <li>혼자 공부하다 막히면 해결하기 어렵고 동기 유지가 어려움</li>
-            </ul>
-            <div class="quote">“어디서 배워야 할지 모르겠고, 학교엔 배울 수 있는 게 없어요.”</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <h2>수준별 커리큘럼</h2>
 
-    <section id="curriculum" class="section">
-      <div class="wrap">
-        <h2>수준별 커리큘럼</h2>
-        <p class="section-desc">기초 이해 → 문제 해결 → 프로젝트·포트폴리오로 이어지는 3단계 구조입니다.</p>
-        <div class="cards">
-          <article class="card curriculum-card basic-card">
-            <span class="tag">01 Basic</span>
-            <h3>기초 이해 과정</h3>
-            <p>프로그래밍 입문 학생을 위한 온라인 보완학습입니다.</p>
-            <ul>
-              <li>라이브 코딩</li>
-              <li>코드 읽기</li>
-              <li>빈칸 채우기</li>
-              <li>조건문·반복문 흐름 분석</li>
-            </ul>
-            <a class="btn primary" href="basic.html">Basic 페이지로 이동</a>
-          </article>
-          <article class="card curriculum-card advanced-card">
-            <span class="tag">02 Advanced</span>
-            <h3>문제 해결 과정</h3>
-            <p>기초 이후 문제 해결과 데이터 응용을 확장하는 과정입니다.</p>
-            <ul>
-              <li>자료형·데이터 응용</li>
-              <li>코드 추적·PRIMM</li>
-              <li>클래스·인스턴스 설계</li>
-              <li>데이터 분석 미니 프로젝트</li>
-            </ul>
-            <a class="btn primary" href="advanced.html">Advanced 페이지로 이동</a>
-          </article>
-          <article class="card curriculum-card expert-card">
-            <span class="tag">03 Expert</span>
-            <h3>포트폴리오 과정</h3>
-            <p>데이터 프로젝트와 포트폴리오로 진로 탐색을 확장하는 과정입니다.</p>
-            <ul>
-              <li>데이터 분석 및 시각화</li>
-              <li>고도화된 PBL</li>
-              <li>알고리즘 문제 해결</li>
-              <li>결과 발표 및 포트폴리오 완성</li>
-            </ul>
-            <a class="btn violet" href="expert.html">Expert 페이지로 이동</a>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
+    <p class="section-desc">
+        기초 이해 → 문제 해결 → 프로젝트·포트폴리오로 이어지는
+        3단계 구조입니다.
+    </p>
 
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <img src="logo.png" alt="BuildUp 로고">
-      <p>© 2026 BuildUp. All Rights Reserved.</p>
+    <!-- BASIC -->
+    <div class="curriculum-card basic">
+
+        <div class="level-label">01 Basic</div>
+
+        <h3>기초 이해 과정</h3>
+
+        <p class="curriculum-text">
+            프로그래밍 입문 학생을 위한 온라인 보완학습입니다.
+        </p>
+
+        <ul>
+            <li>라이브 코딩</li>
+            <li>코드 읽기</li>
+            <li>빈칸 채우기</li>
+            <li>조건문·반복문 흐름 분석</li>
+        </ul>
+
+        <button
+            class="move-btn basic-btn"
+            onclick="window.location.href='https://www.edufit.app/ko/chatbot/classrooms/d83e6226-ee06-4d1c-bdfb-2e4157f066a3'"
+        >
+            Basic 페이지로 이동
+        </button>
+
     </div>
-  </footer>
+
+    <!-- ADVANCED -->
+    <div class="curriculum-card advanced">
+
+        <div class="level-label">02 Advanced</div>
+
+        <h3>문제 해결 과정</h3>
+
+        <p class="curriculum-text">
+            응용 문제 해결과 데이터 활용 중심 과정입니다.
+        </p>
+
+        <ul>
+            <li>문제 분해</li>
+            <li>알고리즘 설계</li>
+            <li>데이터 분석 기초</li>
+            <li>미니 프로젝트</li>
+        </ul>
+
+        <button
+            class="move-btn advanced-btn"
+            onclick="window.location.href='advanced.html'"
+        >
+            Advanced 페이지로 이동
+        </button>
+
+    </div>
+
+    <!-- EXPERT -->
+    <div class="curriculum-card expert">
+
+        <div class="level-label">03 Expert</div>
+
+        <h3>프로젝트 심화 과정</h3>
+
+        <p class="curriculum-text">
+            AI·데이터 기반 프로젝트와 포트폴리오 제작 과정입니다.
+        </p>
+
+        <ul>
+            <li>AI 프로젝트</li>
+            <li>공공데이터 활용</li>
+            <li>포트폴리오 제작</li>
+            <li>발표 및 문서화</li>
+        </ul>
+
+        <button
+            class="move-btn expert-btn"
+            onclick="window.location.href='expert.html'"
+        >
+            Expert 페이지로 이동
+        </button>
+
+    </div>
+
+</section>
+
 </body>
 </html>
