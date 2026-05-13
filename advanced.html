@@ -202,12 +202,16 @@ main{
 
 .class-connect{
     margin-top:70px;
+    position:relative;
+    z-index:20;
 }
 
 .class-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:22px;
+    position:relative;
+    z-index:30;
 }
 
 .class-box{
@@ -223,6 +227,14 @@ main{
     cursor:pointer;
     transition:0.2s;
     font-family:inherit;
+
+    position:relative;
+    z-index:50;
+
+    appearance:none;
+    -webkit-appearance:none;
+
+    pointer-events:auto;
 }
 
 .class-box:hover{
@@ -249,7 +261,7 @@ main{
     position:fixed;
     inset:0;
     background:rgba(0,0,0,0.35);
-    z-index:9999;
+    z-index:99999;
     align-items:center;
     justify-content:center;
     padding:20px;
@@ -367,7 +379,7 @@ main{
     </p>
 
     <div class="hero-buttons">
-        <button class="primary-btn" type="button" onclick="showReadyModal()">
+        <button class="primary-btn" type="button" onclick="showReadyModal(); return false;">
             클래스 구성 보기
         </button>
 
@@ -444,19 +456,19 @@ main{
 
         <div class="class-grid">
 
-            <button class="class-box" type="button" onclick="showReadyModal()">
+            <button class="class-box" type="button" onclick="showReadyModal(); return false;">
                 Advanced 1: 데이터 구조 응용
             </button>
 
-            <button class="class-box" type="button" onclick="showReadyModal()">
+            <button class="class-box" type="button" onclick="showReadyModal(); return false;">
                 Advanced 2: 코드 추적·디버깅
             </button>
 
-            <button class="class-box" type="button" onclick="showReadyModal()">
+            <button class="class-box" type="button" onclick="showReadyModal(); return false;">
                 Advanced 3: 클래스 설계
             </button>
 
-            <button class="class-box" type="button" onclick="showReadyModal()">
+            <button class="class-box" type="button" onclick="showReadyModal(); return false;">
                 Advanced 4: 데이터 미니 프로젝트
             </button>
 
@@ -473,18 +485,28 @@ main{
 <div id="readyModal" class="ready-modal">
     <div class="ready-box">
         <p>준비중입니다.</p>
-        <button type="button" onclick="closeReadyModal()">확인</button>
+        <button type="button" onclick="closeReadyModal(); return false;">확인</button>
     </div>
 </div>
 
 <script>
-function showReadyModal(){
-    document.getElementById('readyModal').style.display = 'flex';
-}
+document.addEventListener("DOMContentLoaded", function(){
 
-function closeReadyModal(){
-    document.getElementById('readyModal').style.display = 'none';
-}
+    window.showReadyModal = function(){
+        var modal = document.getElementById("readyModal");
+        if(modal){
+            modal.style.display = "flex";
+        }
+    };
+
+    window.closeReadyModal = function(){
+        var modal = document.getElementById("readyModal");
+        if(modal){
+            modal.style.display = "none";
+        }
+    };
+
+});
 </script>
 
 </body>
