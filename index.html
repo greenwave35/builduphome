@@ -14,10 +14,15 @@
 }
 
 body{
-    font-family:'Pretendard',sans-serif;
+    font-family:'Pretendard','Noto Sans KR',Arial,sans-serif;
     background:#eef3f8;
     color:#1e293b;
     line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
 /* =========================
@@ -39,17 +44,12 @@ header{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:18px 24px;
+    padding:16px 24px;
 }
 
-.logo{
-    font-size:38px;
-    font-weight:900;
-    color:#0f3f7d;
-}
-
-.logo span{
-    color:#74b816;
+.logo img{
+    height:58px;
+    display:block;
 }
 
 nav{
@@ -60,12 +60,15 @@ nav{
 nav a{
     text-decoration:none;
     color:#334155;
-    font-weight:700;
+    font-weight:800;
+    padding:8px 14px;
+    border-radius:999px;
     transition:0.2s;
 }
 
 nav a:hover{
     color:#2563eb;
+    background:#e7f1ff;
 }
 
 /* =========================
@@ -182,59 +185,17 @@ CURRICULUM CARDS
 }
 
 /* =========================
-CLASS CONNECT
-========================= */
-
-.class-connect{
-    margin-top:90px;
-}
-
-.class-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
-}
-
-.class-box{
-    background:white;
-    border:2px solid #d8e0ea;
-    border-radius:24px;
-    padding:30px;
-    font-size:22px;
-    font-weight:900;
-    color:#0f3f7d;
-    text-align:left;
-    cursor:pointer;
-    transition:0.2s;
-}
-
-.class-box:hover{
-    transform:translateY(-3px);
-    border-color:#2563eb;
-}
-
-.notice-box{
-    margin-top:42px;
-    background:#e7f6ec;
-    border:2px solid #9be6b1;
-    border-radius:24px;
-    padding:30px;
-    color:#166534;
-    font-size:20px;
-    line-height:1.8;
-}
-
-/* =========================
 RESPONSIVE
 ========================= */
 
 @media(max-width:900px){
 
-    .card-grid{
-        grid-template-columns:1fr;
+    .header-inner{
+        flex-direction:column;
+        gap:14px;
     }
 
-    .class-grid{
+    .card-grid{
         grid-template-columns:1fr;
     }
 
@@ -250,17 +211,14 @@ RESPONSIVE
         font-size:28px;
     }
 
-    .class-box{
-        font-size:18px;
-        padding:24px;
-    }
-
-    .notice-box{
-        font-size:17px;
-    }
-
     nav{
         gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .logo img{
+        height:52px;
     }
 }
 </style>
@@ -269,11 +227,12 @@ RESPONSIVE
 <body>
 
 <header>
+
     <div class="header-inner">
 
-        <div class="logo">
-            Build<span>Up</span>
-        </div>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Build Up Logo">
+        </a>
 
         <nav>
             <a href="index.html">홈</a>
@@ -283,6 +242,7 @@ RESPONSIVE
         </nav>
 
     </div>
+
 </header>
 
 <!-- =========================
@@ -379,46 +339,6 @@ CURRICULUM
                 Expert 페이지로 이동
             </button>
 
-        </div>
-
-    </div>
-
-    <!-- =========================
-    CLASS CONNECT
-    ========================= -->
-
-    <div class="class-connect">
-
-        <h2 class="section-title">클래스 연결</h2>
-
-        <div class="class-grid">
-
-            <button class="class-box"
-            onclick="alert('준비중입니다.')">
-                Advanced 1: 데이터 구조 응용
-            </button>
-
-            <button class="class-box"
-            onclick="alert('준비중입니다.')">
-                Advanced 2: 코드 추적·디버깅
-            </button>
-
-            <button class="class-box"
-            onclick="alert('준비중입니다.')">
-                Advanced 3: 클래스 설계
-            </button>
-
-            <button class="class-box"
-            onclick="alert('준비중입니다.')">
-                Advanced 4: 데이터 미니 프로젝트
-            </button>
-
-        </div>
-
-        <div class="notice-box">
-            권장 운영: 주 1회 6주.
-            결과물은 문제 해결 기록, 코드 개선본,
-            미니 분석 보고서로 축적합니다.
         </div>
 
     </div>
