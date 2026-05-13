@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="styles.css" />
 
 <style>
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
     font-family:Pretendard, sans-serif;
@@ -16,9 +20,13 @@ body{
     color:#222;
 }
 
+/* =========================
+HEADER
+========================= */
+
 .top-header{
     background:#ffffff;
-    padding:18px 20px;
+    padding:20px;
     text-align:center;
     border-bottom:1px solid #e5e7eb;
     position:sticky;
@@ -27,46 +35,63 @@ body{
 }
 
 .logo{
-    height:42px;
-    margin-bottom:10px;
+    height:46px;
+    margin-bottom:12px;
 }
 
 .menu{
     display:flex;
     justify-content:center;
-    gap:28px;
-    font-size:15px;
+    gap:34px;
+    font-size:16px;
     font-weight:700;
     color:#475569;
 }
 
 .menu span{
     cursor:pointer;
+    transition:0.2s;
 }
 
+.menu span:hover{
+    color:#2c6ed5;
+}
+
+/* =========================
+MAIN SECTION
+========================= */
+
 .curriculum-section{
-    padding:24px 18px 50px;
+    max-width:1200px;
+    margin:0 auto;
+    padding:50px 24px 80px;
 }
 
 .curriculum-section h2{
-    font-size:30px;
+    font-size:42px;
     font-weight:800;
     color:#1f3b64;
-    margin-bottom:10px;
+    margin-bottom:14px;
 }
 
 .section-desc{
     color:#5b6475;
-    line-height:1.7;
-    margin-bottom:28px;
+    line-height:1.8;
+    font-size:18px;
+    margin-bottom:40px;
 }
+
+/* =========================
+CARD
+========================= */
 
 .curriculum-card{
     background:#fff;
     border-radius:24px;
-    padding:24px;
-    margin-bottom:24px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    padding:36px;
+    margin:0 auto 32px;
+    max-width:1000px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
 }
 
 .basic{
@@ -85,47 +110,57 @@ body{
     display:inline-block;
     background:#eef2f7;
     color:#5d6677;
-    font-size:13px;
+    font-size:14px;
     font-weight:700;
-    padding:8px 14px;
+    padding:10px 16px;
     border-radius:30px;
-    margin-bottom:18px;
+    margin-bottom:22px;
 }
 
 .curriculum-card h3{
-    font-size:32px;
+    font-size:42px;
     color:#1d3557;
-    margin-bottom:18px;
+    margin-bottom:24px;
     font-weight:800;
 }
 
 .curriculum-text{
     color:#555;
-    line-height:1.8;
-    margin-bottom:18px;
+    line-height:1.9;
+    font-size:18px;
+    margin-bottom:24px;
 }
 
 .curriculum-card ul{
-    padding-left:20px;
-    margin-bottom:28px;
+    padding-left:24px;
+    margin-bottom:36px;
 }
 
 .curriculum-card li{
-    margin-bottom:12px;
+    margin-bottom:14px;
     color:#333;
-    line-height:1.6;
+    line-height:1.8;
+    font-size:18px;
 }
+
+/* =========================
+BUTTON
+========================= */
 
 .move-btn{
     width:100%;
     border:none;
-    border-radius:14px;
-    padding:16px;
-    font-size:18px;
+    border-radius:16px;
+    padding:18px;
+    font-size:20px;
     font-weight:700;
     cursor:pointer;
     transition:0.2s;
     color:white;
+}
+
+.move-btn:hover{
+    transform:translateY(-2px);
 }
 
 .basic-btn{
@@ -152,16 +187,65 @@ body{
     background:#5537bf;
 }
 
-.move-btn:hover{
-    transform:translateY(-2px);
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    .curriculum-section{
+        padding:28px 18px 60px;
+    }
+
+    .curriculum-section h2{
+        font-size:30px;
+    }
+
+    .section-desc{
+        font-size:15px;
+    }
+
+    .curriculum-card{
+        padding:24px;
+    }
+
+    .curriculum-card h3{
+        font-size:30px;
+    }
+
+    .curriculum-text{
+        font-size:15px;
+    }
+
+    .curriculum-card li{
+        font-size:15px;
+    }
+
+    .move-btn{
+        font-size:17px;
+        padding:16px;
+    }
+
+    .menu{
+        gap:20px;
+        font-size:14px;
+    }
+
+    .logo{
+        height:40px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- 상단 -->
+<!-- =========================
+HEADER
+========================= -->
+
 <header class="top-header">
+
     <img src="logo.png" class="logo" alt="BuildUp Logo" />
 
     <div class="menu">
@@ -170,19 +254,24 @@ body{
         <span>Advanced</span>
         <span>Expert</span>
     </div>
+
 </header>
 
-<!-- 커리큘럼 -->
+<!-- =========================
+CURRICULUM
+========================= -->
+
 <section class="curriculum-section">
 
     <h2>수준별 커리큘럼</h2>
 
     <p class="section-desc">
         기초 이해 → 문제 해결 → 프로젝트·포트폴리오로 이어지는
-        3단계 구조입니다.
+        3단계 학습 구조입니다.
     </p>
 
     <!-- BASIC -->
+
     <div class="curriculum-card basic">
 
         <div class="level-label">01 Basic</div>
@@ -190,7 +279,7 @@ body{
         <h3>기초 이해 과정</h3>
 
         <p class="curriculum-text">
-            프로그래밍 입문 학생을 위한 온라인 보완학습입니다.
+            프로그래밍 입문 학생을 위한 온라인 보완학습 과정입니다.
         </p>
 
         <ul>
@@ -210,6 +299,7 @@ body{
     </div>
 
     <!-- ADVANCED -->
+
     <div class="curriculum-card advanced">
 
         <div class="level-label">02 Advanced</div>
@@ -237,6 +327,7 @@ body{
     </div>
 
     <!-- EXPERT -->
+
     <div class="curriculum-card expert">
 
         <div class="level-label">03 Expert</div>
