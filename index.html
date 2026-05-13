@@ -6,6 +6,9 @@
 
 <title>Build Up</title>
 
+<link rel="icon" href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+
 <style>
 *{
     margin:0;
@@ -15,8 +18,8 @@
 
 body{
     font-family:'Pretendard','Noto Sans KR',Arial,sans-serif;
-    background:#eef3f8;
-    color:#1e293b;
+    background:linear-gradient(180deg,#f7fbff 0%,#eef6ff 100%);
+    color:#0f172a;
     line-height:1.6;
 }
 
@@ -24,10 +27,6 @@ a{
     text-decoration:none;
     color:inherit;
 }
-
-/* =========================
-HEADER
-========================= */
 
 header{
     width:100%;
@@ -40,86 +39,92 @@ header{
 
 .header-inner{
     max-width:1200px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    margin:0 auto;
     padding:16px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo img{
-    height:58px;
+    height:56px;
     display:block;
 }
 
 nav{
     display:flex;
-    gap:30px;
+    gap:28px;
+    align-items:center;
 }
 
 nav a{
-    text-decoration:none;
-    color:#334155;
+    font-size:15px;
     font-weight:800;
+    color:#334155;
     padding:8px 14px;
     border-radius:999px;
-    transition:0.2s;
 }
 
-nav a:hover{
-    color:#2563eb;
+nav a:hover,
+nav a.active{
+    color:#063b73;
     background:#e7f1ff;
 }
 
-/* =========================
-SECTION
-========================= */
-
-.section{
+main{
     max-width:1200px;
-    margin:auto;
-    padding:70px 24px;
+    margin:0 auto;
+    padding:70px 24px 90px;
 }
 
-.section-title{
-    font-size:56px;
+.badge{
+    display:inline-block;
+    background:#e7f1ff;
+    color:#063b73;
     font-weight:900;
-    color:#0f3f7d;
-    margin-bottom:18px;
+    padding:8px 16px;
+    border-radius:999px;
+    margin-bottom:16px;
 }
 
-.section-desc{
-    font-size:18px;
-    color:#475569;
-    margin-bottom:50px;
+.hero-title{
+    font-size:50px;
+    font-weight:900;
+    color:#063b73;
+    line-height:1.25;
+    margin-bottom:16px;
 }
 
-/* =========================
-CURRICULUM CARDS
-========================= */
+.hero-desc{
+    font-size:19px;
+    color:#334155;
+    margin-bottom:44px;
+}
 
 .card-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:28px;
+    gap:24px;
 }
 
 .card{
     background:white;
-    border-radius:26px;
-    padding:34px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.06);
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(15,63,125,0.05);
+    border:1px solid #d6e2ef;
     border-top:8px solid #2563eb;
     display:flex;
     flex-direction:column;
+    min-height:430px;
 }
 
 .card.advanced{
-    border-top:8px solid #16a34a;
+    border-top-color:#16a34a;
 }
 
 .card.expert{
-    border-top:8px solid #7c3aed;
+    border-top-color:#7c3aed;
 }
 
 .level{
@@ -130,20 +135,20 @@ CURRICULUM CARDS
     border-radius:999px;
     font-size:13px;
     font-weight:800;
-    margin-bottom:28px;
+    margin-bottom:24px;
 }
 
-.card h3{
-    font-size:34px;
+.card h2{
+    font-size:30px;
     font-weight:900;
-    color:#0f3f7d;
-    margin-bottom:24px;
+    color:#063b73;
+    margin-bottom:20px;
     line-height:1.3;
 }
 
 .card p{
     color:#475569;
-    margin-bottom:24px;
+    margin-bottom:22px;
 }
 
 .card ul{
@@ -152,18 +157,18 @@ CURRICULUM CARDS
 }
 
 .card li{
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .move-btn{
     margin-top:auto;
     width:100%;
     border:none;
-    border-radius:16px;
-    padding:18px;
+    border-radius:14px;
+    padding:16px;
     color:white;
-    font-size:18px;
-    font-weight:800;
+    font-size:17px;
+    font-weight:900;
     cursor:pointer;
     transition:0.2s;
 }
@@ -184,37 +189,36 @@ CURRICULUM CARDS
     background:#7c3aed;
 }
 
-/* =========================
-RESPONSIVE
-========================= */
-
 @media(max-width:900px){
-
     .header-inner{
         flex-direction:column;
-        gap:14px;
+        gap:12px;
+    }
+
+    nav{
+        gap:10px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    main{
+        padding:44px 18px 70px;
+    }
+
+    .hero-title{
+        font-size:34px;
+    }
+
+    .hero-desc{
+        font-size:16px;
     }
 
     .card-grid{
         grid-template-columns:1fr;
     }
 
-    .section{
-        padding:50px 18px;
-    }
-
-    .section-title{
-        font-size:42px;
-    }
-
-    .card h3{
-        font-size:28px;
-    }
-
-    nav{
-        gap:18px;
-        flex-wrap:wrap;
-        justify-content:center;
+    .card{
+        min-height:auto;
     }
 
     .logo img{
@@ -227,45 +231,39 @@ RESPONSIVE
 <body>
 
 <header>
-
     <div class="header-inner">
-
         <a href="index.html" class="logo">
             <img src="logo.png" alt="Build Up Logo">
         </a>
 
         <nav>
-            <a href="index.html">홈</a>
+            <a href="index.html" class="active">홈</a>
             <a href="basic.html">Basic</a>
             <a href="advanced.html">Advanced</a>
             <a href="expert.html">Expert</a>
         </nav>
-
     </div>
-
 </header>
 
-<!-- =========================
-CURRICULUM
-========================= -->
+<main>
 
-<section class="section">
+    <span class="badge">Build Up Curriculum</span>
 
-    <h1 class="section-title">수준별 커리큘럼</h1>
+    <h1 class="hero-title">
+        수준별 커리큘럼
+    </h1>
 
-    <p class="section-desc">
-        기초 이해 → 문제 해결 → 프로젝트·포트폴리오로 이어지는
-        3단계 학습 구조입니다.
+    <p class="hero-desc">
+        기초 이해 → 문제 해결 → 프로젝트·포트폴리오로 이어지는 3단계 학습 구조입니다.
     </p>
 
-    <div class="card-grid">
+    <section class="card-grid">
 
-        <!-- BASIC -->
-        <div class="card">
+        <div class="card basic">
 
             <div class="level">01 Basic</div>
 
-            <h3>기초 이해 과정</h3>
+            <h2>기초 이해 과정</h2>
 
             <p>
                 프로그래밍 입문 학생을 위한 온라인 보완학습 과정입니다.
@@ -287,12 +285,11 @@ CURRICULUM
 
         </div>
 
-        <!-- ADVANCED -->
         <div class="card advanced">
 
             <div class="level">02 Advanced</div>
 
-            <h3>문제 해결 과정</h3>
+            <h2>문제 해결 과정</h2>
 
             <p>
                 응용 문제 해결과 데이터 활용 중심 과정입니다.
@@ -314,12 +311,11 @@ CURRICULUM
 
         </div>
 
-        <!-- EXPERT -->
         <div class="card expert">
 
             <div class="level">03 Expert</div>
 
-            <h3>프로젝트 심화 과정</h3>
+            <h2>프로젝트 심화 과정</h2>
 
             <p>
                 AI·데이터 기반 프로젝트와 포트폴리오 제작 과정입니다.
@@ -341,9 +337,9 @@ CURRICULUM
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+</main>
 
 </body>
 </html>
