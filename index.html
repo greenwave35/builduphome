@@ -2,185 +2,265 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>Build Up</title>
 
-<link rel="stylesheet" href="styles.css" />
-
 <style>
-*{box-sizing:border-box}
-
-body{
+*{
     margin:0;
-    font-family:Arial,'Noto Sans KR',sans-serif;
-    background:#f5f7fb;
-    color:#222;
+    padding:0;
+    box-sizing:border-box;
 }
 
-a{text-decoration:none;color:inherit}
+body{
+    font-family:'Pretendard',sans-serif;
+    background:#eef3f8;
+    color:#1e293b;
+    line-height:1.6;
+}
 
-.top-header{
-    background:#ffffff;
-    padding:16px 20px;
-    text-align:center;
-    border-bottom:1px solid #e5e7eb;
+/* =========================
+HEADER
+========================= */
+
+header{
+    width:100%;
+    background:white;
+    border-bottom:1px solid #dbe2ea;
     position:sticky;
     top:0;
     z-index:100;
 }
 
-.logo{
-    height:48px;
-    margin-bottom:10px;
-}
-
-.menu{
+.header-inner{
+    max-width:1200px;
+    margin:auto;
     display:flex;
-    justify-content:center;
-    gap:32px;
-    font-size:15px;
-    font-weight:800;
-    color:#475569;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 24px;
 }
 
-.menu a:hover{
-    color:#2c6ed5;
-}
-
-.curriculum-section{
-    max-width:1180px;
-    margin:0 auto;
-    padding:56px 24px 80px;
-}
-
-.curriculum-section h2{
-    font-size:40px;
+.logo{
+    font-size:38px;
     font-weight:900;
-    color:#063b73;
-    margin:0 0 14px;
+    color:#0f3f7d;
+}
+
+.logo span{
+    color:#74b816;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#334155;
+    font-weight:700;
+    transition:0.2s;
+}
+
+nav a:hover{
+    color:#2563eb;
+}
+
+/* =========================
+SECTION
+========================= */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 24px;
+}
+
+.section-title{
+    font-size:56px;
+    font-weight:900;
+    color:#0f3f7d;
+    margin-bottom:18px;
 }
 
 .section-desc{
-    color:#5b6475;
-    line-height:1.8;
-    font-size:17px;
-    margin-bottom:40px;
+    font-size:18px;
+    color:#475569;
+    margin-bottom:50px;
 }
 
-.curriculum-grid{
+/* =========================
+CURRICULUM CARDS
+========================= */
+
+.card-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:24px;
+    gap:28px;
 }
 
-.curriculum-card{
-    background:#fff;
-    border-radius:24px;
-    padding:28px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+.card{
+    background:white;
+    border-radius:26px;
+    padding:34px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.06);
+    border-top:8px solid #2563eb;
     display:flex;
     flex-direction:column;
-    min-height:520px;
 }
 
-.basic{border-top:8px solid #2c6ed5}
-.advanced{border-top:8px solid #19a974}
-.expert{border-top:8px solid #6c4ed9}
+.card.advanced{
+    border-top:8px solid #16a34a;
+}
 
-.level-label{
+.card.expert{
+    border-top:8px solid #7c3aed;
+}
+
+.level{
     display:inline-block;
     background:#eef2f7;
-    color:#5d6677;
+    color:#475569;
+    padding:8px 16px;
+    border-radius:999px;
     font-size:13px;
     font-weight:800;
-    padding:8px 14px;
-    border-radius:30px;
-    margin-bottom:22px;
+    margin-bottom:28px;
 }
 
-.curriculum-card h3{
-    font-size:30px;
-    color:#1d3557;
-    margin:0 0 22px;
+.card h3{
+    font-size:34px;
     font-weight:900;
-    line-height:1.25;
+    color:#0f3f7d;
+    margin-bottom:24px;
+    line-height:1.3;
 }
 
-.curriculum-text{
-    color:#555;
-    line-height:1.8;
-    font-size:16px;
-    margin-bottom:22px;
+.card p{
+    color:#475569;
+    margin-bottom:24px;
 }
 
-.curriculum-card ul{
+.card ul{
     padding-left:20px;
-    margin:0 0 30px;
+    margin-bottom:32px;
 }
 
-.curriculum-card li{
+.card li{
     margin-bottom:12px;
-    color:#333;
-    line-height:1.7;
-    font-size:15px;
 }
 
 .move-btn{
+    margin-top:auto;
     width:100%;
     border:none;
     border-radius:16px;
-    padding:16px;
-    font-size:17px;
+    padding:18px;
+    color:white;
+    font-size:18px;
     font-weight:800;
     cursor:pointer;
     transition:0.2s;
-    color:white;
-    margin-top:auto;
 }
 
 .move-btn:hover{
     transform:translateY(-2px);
 }
 
-.basic-btn{background:#2c6ed5}
-.basic-btn:hover{background:#1f5dc0}
+.basic-btn{
+    background:#2563eb;
+}
 
-.advanced-btn{background:#19a974}
-.advanced-btn:hover{background:#12845a}
+.advanced-btn{
+    background:#16a34a;
+}
 
-.expert-btn{background:#6c4ed9}
-.expert-btn:hover{background:#5537bf}
+.expert-btn{
+    background:#7c3aed;
+}
+
+/* =========================
+CLASS CONNECT
+========================= */
+
+.class-connect{
+    margin-top:90px;
+}
+
+.class-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.class-box{
+    background:white;
+    border:2px solid #d8e0ea;
+    border-radius:24px;
+    padding:30px;
+    font-size:22px;
+    font-weight:900;
+    color:#0f3f7d;
+    text-align:left;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.class-box:hover{
+    transform:translateY(-3px);
+    border-color:#2563eb;
+}
+
+.notice-box{
+    margin-top:42px;
+    background:#e7f6ec;
+    border:2px solid #9be6b1;
+    border-radius:24px;
+    padding:30px;
+    color:#166534;
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
 
 @media(max-width:900px){
-    .curriculum-grid{
+
+    .card-grid{
         grid-template-columns:1fr;
     }
 
-    .curriculum-section{
-        padding:32px 18px 60px;
+    .class-grid{
+        grid-template-columns:1fr;
     }
 
-    .curriculum-section h2{
-        font-size:30px;
+    .section{
+        padding:50px 18px;
     }
 
-    .section-desc{
-        font-size:15px;
+    .section-title{
+        font-size:42px;
     }
 
-    .curriculum-card{
-        min-height:auto;
-        padding:24px;
-    }
-
-    .curriculum-card h3{
+    .card h3{
         font-size:28px;
     }
 
-    .menu{
-        gap:20px;
-        font-size:14px;
+    .class-box{
+        font-size:18px;
+        padding:24px;
+    }
+
+    .notice-box{
+        font-size:17px;
+    }
+
+    nav{
+        gap:18px;
     }
 }
 </style>
@@ -188,33 +268,46 @@ a{text-decoration:none;color:inherit}
 
 <body>
 
-<header class="top-header">
-    <img src="logo.png" class="logo" alt="BuildUp Logo" />
+<header>
+    <div class="header-inner">
 
-    <nav class="menu">
-        <a href="index.html">홈</a>
-        <a href="basic.html">Basic</a>
-        <a href="advanced.html">Advanced</a>
-        <a href="expert.html">Expert</a>
-    </nav>
+        <div class="logo">
+            Build<span>Up</span>
+        </div>
+
+        <nav>
+            <a href="index.html">홈</a>
+            <a href="basic.html">Basic</a>
+            <a href="advanced.html">Advanced</a>
+            <a href="expert.html">Expert</a>
+        </nav>
+
+    </div>
 </header>
 
-<section id="curriculum" class="curriculum-section">
+<!-- =========================
+CURRICULUM
+========================= -->
 
-    <h2>수준별 커리큘럼</h2>
+<section class="section">
+
+    <h1 class="section-title">수준별 커리큘럼</h1>
 
     <p class="section-desc">
-        기초 이해 → 문제 해결 → 프로젝트·포트폴리오로 이어지는 3단계 학습 구조입니다.
+        기초 이해 → 문제 해결 → 프로젝트·포트폴리오로 이어지는
+        3단계 학습 구조입니다.
     </p>
 
-    <div class="curriculum-grid">
+    <div class="card-grid">
 
-        <div class="curriculum-card basic">
-            <div class="level-label">01 Basic</div>
+        <!-- BASIC -->
+        <div class="card">
+
+            <div class="level">01 Basic</div>
 
             <h3>기초 이해 과정</h3>
 
-            <p class="curriculum-text">
+            <p>
                 프로그래밍 입문 학생을 위한 온라인 보완학습 과정입니다.
             </p>
 
@@ -231,14 +324,17 @@ a{text-decoration:none;color:inherit}
             >
                 Basic 페이지로 이동
             </button>
+
         </div>
 
-        <div class="curriculum-card advanced">
-            <div class="level-label">02 Advanced</div>
+        <!-- ADVANCED -->
+        <div class="card advanced">
+
+            <div class="level">02 Advanced</div>
 
             <h3>문제 해결 과정</h3>
 
-            <p class="curriculum-text">
+            <p>
                 응용 문제 해결과 데이터 활용 중심 과정입니다.
             </p>
 
@@ -255,14 +351,17 @@ a{text-decoration:none;color:inherit}
             >
                 Advanced 페이지로 이동
             </button>
+
         </div>
 
-        <div class="curriculum-card expert">
-            <div class="level-label">03 Expert</div>
+        <!-- EXPERT -->
+        <div class="card expert">
+
+            <div class="level">03 Expert</div>
 
             <h3>프로젝트 심화 과정</h3>
 
-            <p class="curriculum-text">
+            <p>
                 AI·데이터 기반 프로젝트와 포트폴리오 제작 과정입니다.
             </p>
 
@@ -279,6 +378,47 @@ a{text-decoration:none;color:inherit}
             >
                 Expert 페이지로 이동
             </button>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+    CLASS CONNECT
+    ========================= -->
+
+    <div class="class-connect">
+
+        <h2 class="section-title">클래스 연결</h2>
+
+        <div class="class-grid">
+
+            <button class="class-box"
+            onclick="alert('준비중입니다.')">
+                Advanced 1: 데이터 구조 응용
+            </button>
+
+            <button class="class-box"
+            onclick="alert('준비중입니다.')">
+                Advanced 2: 코드 추적·디버깅
+            </button>
+
+            <button class="class-box"
+            onclick="alert('준비중입니다.')">
+                Advanced 3: 클래스 설계
+            </button>
+
+            <button class="class-box"
+            onclick="alert('준비중입니다.')">
+                Advanced 4: 데이터 미니 프로젝트
+            </button>
+
+        </div>
+
+        <div class="notice-box">
+            권장 운영: 주 1회 6주.
+            결과물은 문제 해결 기록, 코드 개선본,
+            미니 분석 보고서로 축적합니다.
         </div>
 
     </div>
